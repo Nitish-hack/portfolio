@@ -4,7 +4,7 @@ import weblogo from "../assets/images/weblogo.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
 
-const Experience = () => {
+const Education = () => {
   const isMobile = useMediaQuery("(max-width: 1000px)");
 
   return (
@@ -19,7 +19,7 @@ const Experience = () => {
           margin: "4rem 0",
         }}
       >
-        <h1 size={28}>Work Experience</h1>
+        <h1 size={28}>Education Qualifications</h1>
         <Timeline active={0} className="timeline" bulletSize={40} lineWidth={3}>
           <Timeline.Item
             pb={30}
@@ -38,7 +38,7 @@ const Experience = () => {
             }
             title={
               <Text className="title" ml={10} color="white">
-                Full Stack Web Developer
+                Bachelor's in Technology(Information technology)
               </Text>
             }
           >
@@ -49,23 +49,16 @@ const Experience = () => {
                 showLabel="Show more"
                 hideLabel="Hide"
               >
-                Worked as Backend and ReactJS developer Intern.
-                <br />
-                Worked on the backend and created REST API to fetch data from
-                the database.
-                <br />
-                Built full-fledged authentication system using NodeJS,
-                ExpressJS, MongoDB, and JWT.
-                <br />
-                Built admin panel using React and Material UI.
-                <br />
-                Solved bugs related to frontend
+                Currently in 3rd year with CGPA of 9.5
+               
+                
               </Spoiler>
             </Text>
             <Text mt={4} ml={10} className="company">
-              Encodingo
+              Guru Gobind Singh Indraprastha University - Delhi , India
             </Text>
           </Timeline.Item>
+       
           <Timeline.Item
             pb={30}
             bullet={
@@ -81,7 +74,7 @@ const Experience = () => {
             }
             title={
               <Text className="title" size="lg" color="white" ml={10}>
-              Open Source Contributor
+                Higher Secondary Schooling (XII)
               </Text>
             }
           >
@@ -92,62 +85,12 @@ const Experience = () => {
                 hideLabel="Hide"
                 className="description"
               >
-                Participated in GSSOC'23 (Girl Script Summer of Code) 
-                <br />
-              Contributed to various websites using technologies such as React, Node.js, Express, and MongoDB
-                <br />
-                Made significant contributions in the development and enhancement of web applications.
-        
-             
+                Passed Higher Secondary Education(XII) in Science  with 90% in 2020 
+               
               </Spoiler>
             </Text>
             <Text mt={4} ml={10} className="company">
-              GSSOC
-            </Text>
-          </Timeline.Item>
-          <Timeline.Item
-            pb={30}
-            bullet={
-              <img
-                src={weblogo}
-                alt="Benoffe"
-                width={40}
-                height={40}
-                style={{
-                  borderRadius: "50%",
-                }}
-              />
-            }
-            title={
-              <Text className="title" size="lg" color="white" ml={10}>
-                Full Stack Web Developer
-              </Text>
-            }
-          >
-            <Text size="md" ml={10}>
-              <Spoiler
-                 maxHeight={isMobile ? 70 : 80}
-                showLabel="Show more"
-                hideLabel="Hide"
-                className="description"
-              >
-                Worked as Backend and ReactJS developer Intern.
-                <br />
-                Designed and Developed the front-end of the website using React
-                , Tailwind CSS and Material UI.
-                <br />
-                Built full-fledged authentication system using NodeJS,
-                ExpressJS, MongoDB, and JWT.
-                <br />
-                Implemented Razorpay Payment Gateway to accept payments from
-                clients.
-                <br />
-                Developed Light Weight UI and Complex Animations using Tailwind
-                CSS and Material UI.
-              </Spoiler>
-            </Text>
-            <Text mt={4} ml={10} className="company">
-              Benoffe
+              Central Board of Secondary Education
             </Text>
           </Timeline.Item>
        
@@ -157,7 +100,7 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;
 
 const Wrapper = styled.div`
   .description {

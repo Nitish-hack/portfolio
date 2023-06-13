@@ -37,7 +37,7 @@ button {
   cursor: pointer;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1000px) {
   .app {
     display: flex;
     flex-direction: column;
