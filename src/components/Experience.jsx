@@ -3,12 +3,11 @@ import encodingo from "../assets/images/encodingo.jpeg";
 import weblogo from "../assets/images/weblogo.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
-import Fade from "react-reveal/Fade"
 const Experience = () => {
   const isMobile = useMediaQuery("(max-width: 1000px)");
 
   return (
-    <Fade bottom duration={1500}>
+   
     <Wrapper id="experience">
       <Box
         sx={{
@@ -156,7 +155,6 @@ const Experience = () => {
         </Timeline>
       </Box>
     </Wrapper>
-    </Fade>
   );
 };
 

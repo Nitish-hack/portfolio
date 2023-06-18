@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
 import OtherProjectsData from '../Database/OtherProjectsData'
-import Fade from "react-reveal/Fade"
+
 const OtherProjects = () => {
   return (
-    <Fade bottom duration={1500}>
     <Wrapper>
     <h1>Some other noteworthy projects</h1>
    <Container>
@@ -28,7 +27,6 @@ const OtherProjects = () => {
     })}
    </Container>
    </Wrapper>
-   </Fade>
   )
 }
 

@@ -4,11 +4,10 @@ import aboutgif from "../assets/images/about.gif"
 import {SiMui,SiCanva,SiReact,SiMongodb,SiTailwindcss,SiCss3,SiNodedotjs} from "react-icons/si"
 import {FaTerminal} from "react-icons/fa"
 import {TbApi} from "react-icons/tb"
-import Fade from "react-reveal/Fade"
+
 
 const About = () => {
   return (
-    <Fade bottom duration={1500}>
     <Wrapper id="about" >
   <h1>About me </h1> 
   <AboutContainer>
@@ -48,7 +47,7 @@ const About = () => {
     </GifContainer>
   </AboutContainer>
   </Wrapper>
-  </Fade>
+ 
   )
 }
 

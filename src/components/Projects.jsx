@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ProjectsData from "../Database/ProjectsData";
 import ProjectCard from "./ProjectCard";
-import Fade from "react-reveal/Fade"
 
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3); // Number of initially visible projects
@@ -20,7 +19,7 @@ const Projects = () => {
     <Wrapper id="work">
       <h1>Projects</h1>
       <ProjectContainer>
-    <Fade bottom duration={1500}>
+  
         {projectsToShow.map((item, index) => (
           <ProjectCard
             key={index}
@@ -32,7 +31,7 @@ const Projects = () => {
             website={item.website}
           />
         ))}
-    </Fade>
+
       </ProjectContainer>
       {visibleProjects < ProjectsData.length && (
         <Button onClick={handleShowMoreProjects}>Show More Projects</Button>
