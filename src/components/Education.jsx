@@ -3,12 +3,14 @@ import encodingo from "../assets/images/encodingo.jpeg";
 import weblogo from "../assets/images/weblogo.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
+import Fade from "react-reveal/Fade"
 
 const Education = () => {
   const isMobile = useMediaQuery("(max-width: 1000px)");
 
   return (
-    <Wrapper>
+    <Fade bottom duration={1500}>
+    <Wrapper id="education">
       <Box
         sx={{
           display: "flex",
@@ -19,7 +21,7 @@ const Education = () => {
           margin: "4rem 0",
         }}
       >
-        <h1 size={28}>Education Qualifications</h1>
+        <h1 >Education Qualifications</h1>
         <Timeline active={0} className="timeline" bulletSize={40} lineWidth={3}>
           <Timeline.Item
             pb={30}
@@ -97,14 +99,18 @@ const Education = () => {
         </Timeline>
       </Box>
     </Wrapper>
+    </Fade>
   );
 };
 
 export default Education;
 
 const Wrapper = styled.div`
+h1{
+  color:#ccd6f6;
+}
   .description {
-    color: white;
+    color: #d7d7d7;
     font-size: 17px;
     font-family: "Poppins", sans-serif;
     @media screen and (max-width: 1000px) {
@@ -114,6 +120,7 @@ const Wrapper = styled.div`
 
   .title {
     font-size: 20px;
+    color:#d9e8ff;
     font-family: "Libre Baskerville", serif;
 
     @media screen and (max-width: 1000px) {

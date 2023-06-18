@@ -3,12 +3,13 @@ import encodingo from "../assets/images/encodingo.jpeg";
 import weblogo from "../assets/images/weblogo.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
-
+import Fade from "react-reveal/Fade"
 const Experience = () => {
   const isMobile = useMediaQuery("(max-width: 1000px)");
 
   return (
-    <Wrapper>
+    <Fade bottom duration={1500}>
+    <Wrapper id="experience">
       <Box
         sx={{
           display: "flex",
@@ -19,8 +20,9 @@ const Experience = () => {
           margin: "4rem 0",
         }}
       >
-        <h1 size={28}>Work Experience</h1>
+        <h1>Work Experience</h1>
         <Timeline active={0} className="timeline" bulletSize={40} lineWidth={3}>
+        
           <Timeline.Item
             pb={30}
             active={true}
@@ -154,15 +156,20 @@ const Experience = () => {
         </Timeline>
       </Box>
     </Wrapper>
+    </Fade>
   );
 };
 
 export default Experience;
 
 const Wrapper = styled.div`
+h1{
+  color:#ccd6f6;
+}
   .description {
-    color: white;
+   
     font-size: 17px;
+    color: #d7d7d7;
     font-family: "Poppins", sans-serif;
     @media screen and (max-width: 1000px) {
       font-size: 15px;
@@ -172,7 +179,7 @@ const Wrapper = styled.div`
   .title {
     font-size: 20px;
     font-family: "Libre Baskerville", serif;
-
+    color:#d9e8ff;
     @media screen and (max-width: 1000px) {
       font-size: 17px;
     }

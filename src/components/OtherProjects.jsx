@@ -1,18 +1,19 @@
 import React from 'react'
 import styled from "styled-components"
-import ProjectsData from '../Database/ProjectsData'
-
+import OtherProjectsData from '../Database/OtherProjectsData'
+import Fade from "react-reveal/Fade"
 const OtherProjects = () => {
   return (
+    <Fade bottom duration={1500}>
     <Wrapper>
-    <h2>Some other noteworthy projects</h2>
+    <h1>Some other noteworthy projects</h1>
    <Container>
-    {ProjectsData.map((item,index)=>{
+    {OtherProjectsData.map((item,index)=>{
         return  <ImageContainer key={index}>
-            <img src={item.thumbnail} alt="image" />
+            <img src={item.thumbnail} alt="project image" />
             <div class="image__overlay image__overlay--primary">
 			<h3>{item.title}</h3>
-			<p>	description of one or two line description of one or two line description of one or two line</p>
+			<p>	{item.description}</p>
             <div className='links'>
             <a href={item.github} target="_blank" rel="noopener noreferrer">
             Code
@@ -27,6 +28,7 @@ const OtherProjects = () => {
     })}
    </Container>
    </Wrapper>
+   </Fade>
   )
 }
 
@@ -37,19 +39,32 @@ const Container =styled.div`
 display:flex;
 width:100%;
 flex-wrap:wrap;
-padding:50px 0;
 row-gap:20px;
 column-gap:2%;
 
 `
 const Wrapper =styled.div`
-
+padding:50px 0;
+padding-bottom:100px;
+ h1 {
+    padding-bottom: 20px;
+    color:#ccd6f6;
+  }
 `
 const ImageContainer =styled.div`
 width:32%;
 position: relative;
 cursor:pointer;
-@media screen and (max-width:800px){
+p{
+    font-size:17px;
+    @media screen and (max-width:1500px) {
+        font-size:12px;
+    }
+    @media screen and (max-width:1000px) {
+        font-size:12px;
+    }
+}
+@media screen and (max-width:900px){
     width:48%;
 }
 @media screen and (max-width:500px){
@@ -94,6 +109,9 @@ img{
     border:1px solid #00ffff;
     letter-spacing:2px;
     font-size:17px;
+    @media screen and (max-width:1500px) {
+        font-size:12px;
+    }
     }
   }
 }

@@ -2,11 +2,15 @@ import React from "react";
 import { styled } from "styled-components";
 import Typewriter from "typewriter-effect";
 import heroimg from "../assets/images/hero.png";
-
+import Socials from "./Socials";
+import {Link} from "react-scroll";
+import { useMediaQuery } from "@mantine/hooks";
+import 'animate.css';
 const Hero = () => {
+  const isMobile = useMediaQuery("(max-width: 1024px)");
   return (
-    <Wrapper>
-      <HeroContainer>
+    <Wrapper id="home">
+      <HeroContainer className="animate__animated animate__fadeIn">
         <p className="greeting">Hi,my name is</p>
         <div className="title">Nitish Kumar Jha</div>
         <div className="profession">
@@ -26,10 +30,31 @@ const Hero = () => {
           new things from scratch, or tinkering with web in general . Currently,
           I'm focused on building handy applications using technologies .
         </div>
-
-        <Button>Read more about me</Button>
+      <Socials />
+ {isMobile ? <ButtonBox>
+  <Button> <Link
+          
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+        >
+          Read more </Link></Button>
+  <Button> <Link  href="/doc/Nitish_resume.pdf" download>Resume</Link></Button>
+ </ButtonBox>:
+        <Button> <Link
+          
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+        >
+          Read more about me</Link></Button>
+ }
       </HeroContainer>
-      <ImageContainer>
+      <ImageContainer className="animate__animated animate__slideInRight">
         <img src={heroimg} alt="hero" />
       </ImageContainer>
     </Wrapper>
@@ -88,12 +113,14 @@ const HeroContainer = styled.div`
   }
   .title {
     font-size: 60px;
+    color:#ccd6f6;
     font-weight: bolder;
   }
   .profession {
     font-size: 40px;
     margin-bottom: 10px;
     display: flex;
+    color:#ccd6f6;
 
     span {
       color: #00ffff;
@@ -102,8 +129,10 @@ const HeroContainer = styled.div`
   }
   .text {
     width: 80%;
+    color:#d9e8ff;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 18px;
+    ${'' /* text-align:justify; */}
   }
 
   @media screen and (max-width: 1140px) {
@@ -140,21 +169,36 @@ const HeroContainer = styled.div`
   }
 `;
 
+const ButtonBox=styled.div`
+display:flex;
+column-gap:10px;
+`
+
 const Button = styled.button`
-  font-size: 20px;
+  font-size: 18px;
   padding: 15px 20px;
+  
   align-self: flex-start;
   margin-top: 30px;
-
   background: none;
-  color: #00ffff;
   border: 1px solid #00ffff;
-  &:hover {
-    box-shadow: 0px 0px 40px 0px rgba(0, 255, 255, 1);
-    transform: scale(1.1);
-    margin-left: 10px;
+border-radius:10px;
+a{
+  color: #00ffff;
+  text-decoration:none; 
+  font-weight:bold;
+  letter-spacing:2px;
+}
+  &:hover{
+	background:#00ffff;
+	a{
+    color:black;
   }
+  }
+
   @media screen and (max-width: 1140px) {
     align-self: center;
   }
 `;
+
+

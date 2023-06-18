@@ -4,11 +4,13 @@ import aboutgif from "../assets/images/about.gif"
 import {SiMui,SiCanva,SiReact,SiMongodb,SiTailwindcss,SiCss3,SiNodedotjs} from "react-icons/si"
 import {FaTerminal} from "react-icons/fa"
 import {TbApi} from "react-icons/tb"
+import Fade from "react-reveal/Fade"
 
 const About = () => {
   return (
-    <Wrapper>
-  <h1>About me </h1>
+    <Fade bottom duration={1500}>
+    <Wrapper id="about" >
+  <h1>About me </h1> 
   <AboutContainer>
     <AboutText>
     Hi, I'm Nitish Kumar Jha, a passionate and dedicated Full Stack Web Developer with a strong foundation in front-end and back-end technologies. My journey in web development began during my <span> Bachelor's in Technology (IT) at Guru Gobind Singh Indraprastha University</span>. Since then, I have been exploring and honing my skills to create impactful and user-friendly web applications.
@@ -46,15 +48,17 @@ const About = () => {
     </GifContainer>
   </AboutContainer>
   </Wrapper>
+  </Fade>
   )
 }
 
-export default About
+export default About;
 
 const Wrapper =styled.div`
  padding-top:100px;
  h1{
   margin-bottom:20px;
+  color:#ccd6f6;
  }
 padding-bottom:50px;
 @media screen and (max-width:1000px){
@@ -69,9 +73,10 @@ const AboutContainer=styled.div`
  
 }
 
-`
+` 
 const AboutText=styled.div`
 font-size:17px;
+color: #d7d7d7;
 width:60%;
 text-align:justify;
 span{

@@ -8,6 +8,7 @@ body {
   color: white;
   display: flex;
   justify-content: center;
+ 
 }
 body::-webkit-scrollbar {
   width: 6px;

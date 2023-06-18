@@ -49,7 +49,7 @@ const ContentContainer = styled.div`
     font-size: 20px;
     letter-spacing:2px;
     font-family: "Libre Baskerville", serif;
-
+    color:#d9e8ff;
     @media screen and (max-width: 1000px) {
       font-size: 17px;
     }
@@ -58,7 +58,8 @@ const ContentContainer = styled.div`
   .description {
     padding:10px;
     background:#112240;
-    color: white;
+    
+  color: #d7d7d7;
     font-size: 17px;
     font-family: "Poppins", sans-serif;
  
@@ -79,6 +80,7 @@ const ContentContainer = styled.div`
     padding:5px 10px ;
     border-radius:10px;
     white-space:nowrap;
+    color: #d7d7d7;
 
   }
   }
@@ -116,6 +118,7 @@ justify-content:flex-start;
 }
 .stack p{
   background:#0a192f;
+
 }
 
 }

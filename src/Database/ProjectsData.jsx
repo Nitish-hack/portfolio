@@ -35,15 +35,7 @@ const ProjectsData = [
     website: "https://uchat12.netlify.app/",
     github: "https://github.com/Nitish-hack/Uchat",
   },
-  {
-    title: "TravelSphere",
-    description:
-      "TravelSphere: Discover. Plan. Explore. Indulge in our visually stunning static website on ReactJS, offering a captivating interface to explore diverse travel destinations, plan your trips, and ignite your wanderlust. Get ready to embark on unforgettable adventures with TravelSphere.",
-    tech: ["HTML", "CSS", "React JS"],
-    thumbnail: "/images/travelsphere.png",
-    website: "https://travel-sphere-s2r9-mekvymbyw-nitish-hack.vercel.app/",
-    github: "https://github.com/Nitish-hack/TravelSphere",
-  },
+
 ];
 
 export default ProjectsData;

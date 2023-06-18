@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
     {!clicked && 
-   <FooterContainer>
+   <FooterContainer id="contact">
     <div className="title">Get In Touch</div>
     <div className="description">I love to connect with people, whether you wanna offer me an opportunity, collab with me, or just want to have a chat, I'm just one click away </div>
     <Button onClick={handleClick} >Say Hi!</Button>
@@ -20,15 +20,17 @@ const Footer = () => {
    </FooterContainer>
    }
   {clicked && <ContactContainer>
+  <form action="https://formspree.io/f/xgebgpeg" method='POST'>
    <div className="heading">
     <div className='contactme' ><AiOutlineMail /> Contact Me</div>
     <IoMdClose className='closebtn' onClick={handleClick}/>
    </div>
    <div className='desc'>Hello, Whats your email address?</div>
-   <input type="text" className="field" />
+   <input type="email" name="username" className="field" required/>
    <div className='desc'>Please leave a message below?</div>
-   <textarea className='field' />
-   <SendButton>Send</SendButton>
+   <textarea name="message" className='field' />
+   <SendButton  type='submit' value="send">Send</SendButton>
+   </form>
    </ContactContainer> }
    </>
   )
@@ -39,7 +41,7 @@ export default Footer;
 const ContactContainer=styled.div`
 padding:50px 10%;
 background:#112240;
-${'' /* text-align:center; */}
+
 border-top-left-radius:50px;
 border-top-right-radius:50px;
 font-family:"Poppins";
@@ -61,9 +63,13 @@ min-height:60vh;
   column-gap:10px;
     font-weight: bolder;
     align-items:center;
-
+    color:#d9e8ff;
     svg{
         color:#00ffff;
+    }
+
+    @media screen and (max-width:500px){
+      font-size:30px;
     }
   }
 
@@ -71,6 +77,7 @@ min-height:60vh;
 }
 .desc{
 font-size:18px;
+color:#d9e8ff;
 margin-bottom:10px;
     @media screen and (max-width:1000px) {
         font-size:15px;
@@ -102,24 +109,34 @@ background:#112240;
 border-top-left-radius:50px;
 border-top-right-radius:50px;
 font-family:"Poppins";
-height:60vh;
+min-height:60vh;
 .title{
     font-size: 60px;
+    color:#ccd6f6; 
     font-weight: bolder;
-    margin:30px 0;
+    margin:20px 0;
+    margin-bottom:10px;
 }
 .description{
     font-size:17px;
+    color:#d9e8ff;
     @media screen and (max-width:1000px) {
         font-size:15px;
     }
 }
-
+p{
+  color:#d9e8ff;
+}
 a{
     text-decoration:none;
     color:red;
 }
 
+@media screen and (max-width: 730px) {
+    .title {
+      font-size: 40px;
+    }
+}
 `
 
 const Button = styled.button`
@@ -150,4 +167,6 @@ const SendButton=styled.button`
   border:1px solid #00ffff;
   letter-spacing:2px;
   font-size:18px;
+  color:#d9e8ff;
+  font-weight:bold;
 `
