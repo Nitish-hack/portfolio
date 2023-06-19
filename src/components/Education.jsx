@@ -1,6 +1,6 @@
 import { Box, Spoiler, Text, Timeline } from "@mantine/core";
-import encodingo from "../assets/images/encodingo.jpeg";
-import weblogo from "../assets/images/weblogo.png";
+import computer from "../assets/images/computer.png";
+import school from "../assets/images/school.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
 
@@ -27,8 +27,8 @@ const Education = () => {
             color="pink"
             bullet={
               <img
-                src={encodingo}
-                alt="Encodingo"
+                src={computer}
+                alt="B-TECH"
                 width={40}
                 height={40}
                 style={{
@@ -63,7 +63,7 @@ const Education = () => {
             pb={30}
             bullet={
               <img
-                src={weblogo}
+                src={school}
                 alt="Benoffe"
                 width={40}
                 height={40}

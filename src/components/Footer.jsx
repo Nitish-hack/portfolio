@@ -14,7 +14,7 @@ const Footer = () => {
     {!clicked && 
    <FooterContainer id="contact">
     <div className="title">Get In Touch</div>
-    <div className="description">I love to connect with people, whether you wanna offer me an opportunity, collab with me, or just want to have a chat, I'm just one click away </div>
+    <div className="description">I enjoy connecting with individuals and am always open to new opportunities, collaborations, or simply engaging in a friendly conversation. Feel free to reach out to me with just a click of a button. I look forward to hearing from you!</div>
     <Button onClick={handleClick} >Say Hi!</Button>
     <p>Made by <a href="" target="_blank" >Nitish Kumar Jha</a></p>
    </FooterContainer>

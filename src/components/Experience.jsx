@@ -1,6 +1,7 @@
 import { Box, Spoiler, Text, Timeline } from "@mantine/core";
 import encodingo from "../assets/images/encodingo.jpeg";
 import weblogo from "../assets/images/weblogo.png";
+import computer from "../assets/images/computer.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
 const Experience = () => {
@@ -72,7 +73,7 @@ const Experience = () => {
             bullet={
               <img
                 src={weblogo}
-                alt="Benoffe"
+                alt="open source"
                 width={40}
                 height={40}
                 style={{
@@ -110,7 +111,7 @@ const Experience = () => {
             pb={30}
             bullet={
               <img
-                src={weblogo}
+                src={computer}
                 alt="Benoffe"
                 width={40}
                 height={40}
