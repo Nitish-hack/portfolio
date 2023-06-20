@@ -1,14 +1,18 @@
+import { useEffect } from "react";
 import { Box, Spoiler, Text, Timeline } from "@mantine/core";
 import computer from "../assets/images/computer.png";
 import school from "../assets/images/school.png";
 import styled from "styled-components";
 import { useMediaQuery } from "@mantine/hooks";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Education = () => {
   const isMobile = useMediaQuery("(max-width: 1000px)");
-
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
-    <Wrapper id="education">
+    <Wrapper id="education" data-aos="fade-up">
       <Box
         sx={{
           display: "flex",
@@ -22,6 +26,7 @@ const Education = () => {
         <h1 >Education Qualifications</h1>
         <Timeline active={0} className="timeline" bulletSize={40} lineWidth={3}>
           <Timeline.Item
+          data-aos="fade-up"
             pb={30}
             active={true}
             color="pink"
@@ -60,6 +65,7 @@ const Education = () => {
           </Timeline.Item>
        
           <Timeline.Item
+          data-aos="fade-up"
             pb={30}
             bullet={
               <img

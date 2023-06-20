@@ -1,17 +1,22 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { styled } from "styled-components";
 import Typewriter from "typewriter-effect";
 import heroimg from "../assets/images/hero.png";
 import Socials from "./Socials";
 import {Link} from "react-scroll";
 import { useMediaQuery } from "@mantine/hooks";
-import 'animate.css';
+// import 'animate.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Hero = () => {
   const isMobile = useMediaQuery("(max-width: 1024px)");
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <Wrapper id="home">
-      <HeroContainer className="animate__animated animate__fadeIn">
-        <p className="greeting">Hi,my name is</p>
+      <HeroContainer data-aos="zoom-in">
+        <p className="greeting">Hi, my name is</p>
         <div className="title">Nitish Kumar Jha</div>
         <div className="profession">
           I'm a&nbsp;
@@ -54,7 +59,7 @@ const Hero = () => {
           Read more about me</Link></Button>
  }
       </HeroContainer>
-      <ImageContainer className="animate__animated animate__slideInRight">
+      <ImageContainer data-aos="fade-left">
         <img src={heroimg} alt="hero" />
       </ImageContainer>
     </Wrapper>

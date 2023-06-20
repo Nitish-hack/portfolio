@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import ProjectsData from "../Database/ProjectsData";
 import ProjectCard from "./ProjectCard";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3); // Number of initially visible projects
 
@@ -14,15 +15,20 @@ const Projects = () => {
   };
 
   const projectsToShow = ProjectsData.slice(0, visibleProjects);
-
+  
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+  
   return (
-    <Wrapper id="work">
+    <Wrapper id="work" data-aos="fade-up">
       <h1>Projects</h1>
       <ProjectContainer>
   
         {projectsToShow.map((item, index) => (
           <ProjectCard
             key={index}
+            index={index}
             title={item.title}
             description={item.description}
             thumbnail={item.thumbnail}
@@ -60,7 +66,7 @@ const Wrapper = styled.div`
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 100px;
 `;
 
 const Button = styled.button`

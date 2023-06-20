@@ -1,25 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import styled from "styled-components";
 import {AiOutlineMail} from "react-icons/ai"
 import {IoMdClose} from "react-icons/io"
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Footer = () => {
     const [clicked,setClick]=useState(false);
     const handleClick = () => {
         setClick(!clicked); 
     
       };
+      useEffect(() => {
+        AOS.init({ duration: 2000 });
+      }, []);
   return (
     <>
     {!clicked && 
-   <FooterContainer id="contact">
+   <FooterContainer id="contact" data-aos="fade-up">
     <div className="title">Get In Touch</div>
     <div className="description">I enjoy connecting with individuals and am always open to new opportunities, collaborations, or simply engaging in a friendly conversation. Feel free to reach out to me with just a click of a button. I look forward to hearing from you!</div>
     <Button onClick={handleClick} >Say Hi!</Button>
-    <p>Made by <a href="" target="_blank" >Nitish Kumar Jha</a></p>
+    <p>Made by <a href="https://www.linkedin.com/in/nitish9999/" rel="noreferrer" target="_blank" >Nitish Kumar Jha</a></p>
    </FooterContainer>
    }
-  {clicked && <ContactContainer>
+  {clicked && <ContactContainer data-aos="fade-up">
   <form action="https://formspree.io/f/xgebgpeg" method='POST'>
    <div className="heading">
     <div className='contactme' ><AiOutlineMail /> Contact Me</div>

@@ -1,14 +1,18 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import styled from "styled-components"
 import aboutgif from "../assets/images/about.gif"
 import {SiMui,SiCanva,SiReact,SiMongodb,SiTailwindcss,SiCss3,SiNodedotjs} from "react-icons/si"
 import {FaTerminal} from "react-icons/fa"
 import {TbApi} from "react-icons/tb"
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
-    <Wrapper id="about" >
+    <Wrapper id="about" data-aos="fade-up">
   <h1>About me </h1> 
   <AboutContainer>
     <AboutText>

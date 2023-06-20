@@ -1,15 +1,19 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import styled from "styled-components"
 import OtherProjectsData from '../Database/OtherProjectsData'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const OtherProjects = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+      }, []);
   return (
-    <Wrapper>
+    <Wrapper data-aos="fade-up">
     <h1>Some other noteworthy projects</h1>
    <Container>
     {OtherProjectsData.map((item,index)=>{
-        return  <ImageContainer key={index}>
-            <img src={item.thumbnail} alt="project image" />
+        return  <ImageContainer key={index}  data-aos="flip-right">
+            <img src={item.thumbnail} alt="project_image" />
             <div class="image__overlay image__overlay--primary">
 			<h3>{item.title}</h3>
 			<p>	{item.description}</p>

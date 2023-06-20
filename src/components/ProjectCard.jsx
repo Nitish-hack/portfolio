@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import styled from "styled-components";
-
-const ProjectCard = ({ title, description, thumbnail, tech, github, website }) => {
+import AOS from "aos";
+import "aos/dist/aos.css";
+const ProjectCard = ({ title, description, index,thumbnail, tech, github, website }) => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+  const isOddKey = index % 2 === 1;
   return (
-    <CardContainer>
+    <CardContainer data-aos="zoom-in"  isOdd={isOddKey}>
       <ImageContainer>
       <img src={thumbnail} alt="project-img" />
       </ImageContainer>
-      <ContentContainer>
+      <ContentContainer  isOdd={isOddKey}>
         <div className="title">{title}</div>
         <div className="description">{description}</div>
         <div className="stack">
@@ -30,30 +36,33 @@ const ProjectCard = ({ title, description, thumbnail, tech, github, website }) =
 export default ProjectCard;
 
 const CardContainer = styled.div`
-
-display:flex;
-
-@media screen and (max-width:800px){
-  flex-direction:column;
-  background:#112240;
-}
+  display: flex;
+  flex-direction: ${({ isOdd }) => (isOdd ? "row-reverse" : "row")};
+  @media screen and (max-width: 800px) {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex-direction: column;
+    background: #112240;
+    border-radius: 20px;
+  }
 `;
 const ContentContainer = styled.div`
   display: flex;
-  padding-left:20px;
+  padding-left: ${({ isOdd }) => (isOdd ? "0" : "20px")};
+  padding-right: ${({ isOdd }) => (isOdd ? "20px" : "0")};
   flex-direction: column;
-  text-align: right;
-  width:50%;
+  text-align: ${({ isOdd }) => (isOdd ? "left" : "right")};
+  width: 50%;
   row-gap: 15px;
   .title {
     font-size: 20px;
-    letter-spacing:2px;
+    letter-spacing: 2px;
     font-family: "Libre Baskerville", serif;
-    color:#d9e8ff;
+    color: #d9e8ff;
     @media screen and (max-width: 1000px) {
       font-size: 17px;
     }
   }
+
 
   .description {
     padding:10px;
@@ -70,10 +79,10 @@ const ContentContainer = styled.div`
 
   .stack {
     display: flex;
-     flex-wrap:wrap;
-     justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: ${({ isOdd }) => (isOdd ? "flex-start" : "flex-end")};
     column-gap: 10px;
-    row-gap:5px;
+    row-gap: 5px;
 
   p{
     background:#112240;
@@ -88,7 +97,7 @@ const ContentContainer = styled.div`
   .links{
     display:flex;
     column-gap:10px;
-    justify-content: flex-end;
+    justify-content: ${({ isOdd }) => (isOdd ? "flex-start" : "flex-end")};
     a{
       text-decoration:none;
       color:white;
@@ -133,9 +142,11 @@ img{
 @media screen and (max-width:800px){
  width:100%;
 
- img{
-  height:auto;
- }
+ img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      height: auto;
+    }
 }
 
 `;
