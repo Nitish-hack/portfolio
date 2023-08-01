@@ -18,7 +18,7 @@ const ProjectsData = [
     github: "https://github.com/Nitish-hack/vit",
   },
   {
-    title: "Vidify",
+    title: "Incredible Media",
     description:
       "A React-based web application that leverages the YouTube API to provide users with seamless video search and playback. Explore real-time YouTube data, enjoy personalized channel pages, and enhance your video-watching experience.",
     tech: ["React JS", "Material UI", "API"],
