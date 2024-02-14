@@ -76,7 +76,7 @@ function Navbar() {
         >
           Contact
         </Link>
-       {!isMobile && <Button href="/doc/Nitish_resume.pdf" download>Resume</Button>}
+       {!isMobile && <Link to="https://drive.google.com/file/d/1mNKhDQoDzHtuiofmFSzw9HZRn0Z1ZU6D/view" target="_blank"><Button>Resume</Button></Link>}
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
