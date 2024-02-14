@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <header>
-      <img src="/images/portfolioLogo.png" className="portfolioLogo" />
+      <img src="/images/portfolioLogo.png" className="portfolioLogo" alt="logo" />
       <nav ref={navRef}>
         <Link
           activeClass="active"
@@ -76,7 +76,7 @@ function Navbar() {
         >
           Contact
         </Link>
-       {!isMobile && <Link to="https://drive.google.com/file/d/1mNKhDQoDzHtuiofmFSzw9HZRn0Z1ZU6D/view" target="_blank"><Button>Resume</Button></Link>}
+       {!isMobile && <a href="https://drive.google.com/file/d/1mNKhDQoDzHtuiofmFSzw9HZRn0Z1ZU6D/view" target="_blank" rel="noreferrer"><Button>Resume</Button></a>}
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
