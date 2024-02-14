@@ -46,7 +46,7 @@ const Hero = () => {
           duration={500}
         >
           Read more </Link></Button>
-  <Button> <Link  href="/doc/Nitish_resume.pdf" download>Resume</Link></Button>
+  <Button> <Link  href="https://drive.google.com/file/d/1mNKhDQoDzHtuiofmFSzw9HZRn0Z1ZU6D/view" target="_blank">Resume</Link></Button>
  </ButtonBox>:
         <Button> <Link
           
